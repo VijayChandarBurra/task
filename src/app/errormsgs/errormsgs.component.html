@@ -1,0 +1,20 @@
+<div *ngIf="name.errors && (name.touched)"
+     class="alert alert-danger">
+    <div [hidden]="!name.errors.required">
+        {{currentElem.getAttribute('name')}} is required
+    </div>
+    <div [hidden]="!name.errors.minlength">
+      {{currentElem.getAttribute('name')}} must be at least {{currentElem.getAttribute('minlength')}} characters long.
+    </div>
+    <div [hidden]="!name.errors.maxlength">
+        {{currentElem.getAttribute('name')}} cannot be more than {{currentElem.getAttribute('maxlength')}} characters long.
+    </div>
+
+    <div [hidden]="!name.errors.email">
+      Please Enter the valid email
+    </div>
+    <div [hidden]="!name.hasError('pattern')">
+      Please enter valid {{currentElem.getAttribute('name')}}
+      </div>      
+</div>
+
